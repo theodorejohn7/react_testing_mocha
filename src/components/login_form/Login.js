@@ -15,7 +15,7 @@ function Login() {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
 
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
 
   const style = {
     position: 'absolute',
@@ -105,6 +105,8 @@ function Login() {
 
   return (
     <form onSubmit={handleSubmit}>
+      
+      
       <div
         className="App"
         style={{
@@ -137,7 +139,7 @@ function Login() {
 
                 borderRadius: 1
               }}>
-              <Typography variant="h5" component="legend" sx={{ color: 'white' }}>
+              <Typography className='loginTest' variant="h5" component="legend" sx={{ color: 'white' }}>
                 Login Form
               </Typography>
             </Box>
@@ -148,6 +150,7 @@ function Login() {
                 bgcolor: 'white'
               }}
               id="outlined-basic"
+              className='usernameTest'
               label="UserName"
               data-testid="user_name"
               fullWidth
@@ -170,6 +173,7 @@ function Login() {
               fullWidth
               id="pwd-input"
               label="Password"
+              className='passwordTest'
               margin="dense"
               variant="filled"
               type="password"
@@ -189,6 +193,7 @@ function Login() {
               }}>
               <Button
                 variant="contained"
+                className="buttonTest"
                 margin="dense"
                 type="submit"
                 sx={{
@@ -203,18 +208,21 @@ function Login() {
         </Card>
       </div>
       {formErrors.isPopup ? (
-        <div>
+        <div
+        className="modalMessageTest"
+        >
           <Modal
+        
             open={open}
             data-testid="modal-popup"
             onClose={handleClose}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description">
             <Box sx={style}>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
+              <Typography  id="modal-modal-title" variant="h6" component="h2">
                 Please check on below{' '}
               </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2, ml: 5 }}>
+              <Typography  id="modal-modal-description" sx={{ mt: 2, ml: 5 }}>
                 {formErrors.username}
                 <br />
                 {formErrors.pwd}
