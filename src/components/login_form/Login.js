@@ -15,7 +15,7 @@ function Login() {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
 
-  // let navigate = useNavigate();
+  let navigate = useNavigate();
 
   const style = {
     position: 'absolute',
