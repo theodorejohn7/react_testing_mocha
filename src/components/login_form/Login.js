@@ -15,7 +15,7 @@ function Login() {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
 
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
 
   const style = {
     position: 'absolute',
@@ -193,7 +193,7 @@ function Login() {
               }}>
               <Button
                 variant="contained"
-                className="buttonTest"
+                className="buttonTest_mocha"
                 margin="dense"
                 type="submit"
                 sx={{
@@ -220,10 +220,10 @@ function Login() {
             aria-describedby="modal-modal-description">
             <Box sx={style}>
               <Typography  id="modal-modal-title" variant="h6" component="h2">
-                Please check on below{' '}
+                <span>Please check on below</span> {' '}
               </Typography>
               <Typography  id="modal-modal-description" sx={{ mt: 2, ml: 5 }}>
-                {formErrors.username}
+                <span>{formErrors.username}</span>
                 <br />
                 {formErrors.pwd}
               </Typography>
