@@ -9,7 +9,6 @@ import Adapter from '@cfaester/enzyme-adapter-react-18';
 import * as enzyme from 'enzyme';
 import { spy } from 'sinon';
 
-
 configure({ adapter: new Adapter() });
 // Make Enzyme functions available in all test files without importing
 global.shallow = shallow;
@@ -76,64 +75,56 @@ describe('MochaTestApp Component Testing', () => {
       ReactDOM.render(<Login />, rootContainer);
     });
 
-
-    
-
-
-
     // const buttonElement = rootContainer.querySelector('Button');
-    // buttonElement.simulate('click')
-    // expect(buttonElement).to.exist;
+    // buttonElement.simulate('click') 
 
-    // const wrapper = mount(<Login />);
+    const wrapper = mount(<Login />);
+    wrapper.find('button.buttonTest').simulate('click');
+    wrapper.update();
+    wrapper.update();
 
-    // expect(wrapper.find('.Button').length).to.equal(1);
-    //   wrapper.rootContainer.querySelector('Button').simulate('click',{ preventDefault() {} });
-
-    // expect(wrapper.find('.clicks-1').length).to.equal(1);
-
-    //  buttonElement.click();
-    // wrapper.find('.buttonTest').simulate('click');
-    //    wrapper.find('.buttonTest').simulate('click');
-
-    //    wrapper.find('.buttonTest').simulate('click');
-
-    //    wrapper.find('.buttonTest').simulate('click');
-
-    //    wrapper.find('.buttonTest').simulate('click');
-
-    //    wrapper.find('formErrors.isPopup').simulate('click');
-    // expect(wrapper.state('formErrors.isPopup').to.equal(true));
-
-    //    wrapper.find('.buttonTest').first().simulate('click');
-    // wrapper.update();
-    // wrapper.update();
-
-    //    console.log("button",find('.buttonTest'));
-    //    wrapper.find('.buttonTest').first().simulate('click');
-
-    //    expect(wrapper.state('formErrors.isPopup')).to.equal(true);
-
-    //    console.log(wrapper.find(".modalMessageTest"));
-    //   expect(wrapper.find(".modalMessageTest").exists()).equal(true);
+    expect(wrapper.find('.modalMessageTest').exists()).equal(true);
   });
 });
 
+// expect(wrapper.find('.Button').length).to.equal(1);
+//   wrapper.rootContainer.querySelector('Button').simulate('click',{ preventDefault() {} });
 
-describe('Form', () => {
-    it('submit event when click submit', () => {
-     
-      const wrapper = mount(<Login />);
-      wrapper.find('form').simulate('submit', { preventDefault () {} });
-    //   expect(callback).to.have.been.called();
-    });
-  });
+// expect(wrapper.find('.clicks-1').length).to.equal(1);
 
+//  buttonElement.click();
 
-//   ./node_modules/.bin/mocha --require babel-register ./src/components/login_form/Login.test.js 
+//    wrapper.find('.buttonTest').simulate('click');
 
+//    wrapper.find('.buttonTest').simulate('click');
 
+//    wrapper.find('.buttonTest').simulate('click');
 
+//    wrapper.find('.buttonTest').simulate('click');
+
+//    wrapper.find('formErrors.isPopup').simulate('click');
+// expect(wrapper.state('formErrors.isPopup').to.equal(true));
+
+//    wrapper.find('.buttonTest').first().simulate('click');
+
+// wrapper.update();
+
+//    console.log("button",find('.buttonTest'));
+//    wrapper.find('.buttonTest').first().simulate('click');
+
+//    expect(wrapper.state('formErrors.isPopup')).to.equal(true);
+
+//    console.log(wrapper.find(".modalMessageTest"));
+
+// describe('Form', () => {
+//   it('submit event when click submit', () => {
+//     const wrapper = mount(<Login />);
+//     wrapper.find('form').simulate('submit', { preventDefault() {} });
+//     //   expect(callback).to.have.been.called();
+//   });
+// });
+
+//   ./node_modules/.bin/mocha --require babel-register ./src/components/login_form/Login.test.js
 
 // describe('Form', () => {
 //     it('submit event when click submit', () => {
@@ -141,10 +132,8 @@ describe('Form', () => {
 //       const wrapper = mount(<Login    />);
 //     //   wrapper.find('[type="submit"]').simulate.click();
 //     //   expect(callback).to.have.been.called();
-//     wrapper.find('button').simulate('click', {}); 
+//     wrapper.find('button').simulate('click', {});
 //     expect(spy()).toHaveBeenCalled();
 
 //     });
 //   });
-
-
